@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB1A8DFD2ABEB63E005E692D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8DF82ABEB63E005E692D /* Logger.swift */; };
+		AB1A8DFE2ABEB63E005E692D /* LoggerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8DF92ABEB63E005E692D /* LoggerImpl.swift */; };
+		AB1A8DFF2ABEB63E005E692D /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8DFA2ABEB63E005E692D /* LogLevel.swift */; };
+		AB1A8E002ABEB63E005E692D /* LogDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8DFB2ABEB63E005E692D /* LogDestination.swift */; };
+		AB1A8E012ABEB63E005E692D /* LoggerLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8DFC2ABEB63E005E692D /* LoggerLevels.swift */; };
+		AB1A8E032ABEB6F3005E692D /* FastSerialQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E022ABEB6F3005E692D /* FastSerialQueue.swift */; };
+		AB1A8E052ABEB759005E692D /* FastLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E042ABEB759005E692D /* FastLock.swift */; };
+		AB1A8E082ABEBBAE005E692D /* PackageLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E072ABEBBAE005E692D /* PackageLogger.swift */; };
+		AB1A8E0B2ABF422C005E692D /* LogFileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E0A2ABF422C005E692D /* LogFileDestination.swift */; };
+		AB1A8E0D2ABF4267005E692D /* LogConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E0C2ABF4267005E692D /* LogConsoleDestination.swift */; };
+		AB1A8E0F2ABF42FD005E692D /* LogDebugDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E0E2ABF42FD005E692D /* LogDebugDestination.swift */; };
+		AB1A8E112ABF433E005E692D /* LogLevel+osLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E102ABF433E005E692D /* LogLevel+osLog.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB1A8DE82ABEB5BA005E692D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AB1A8DEA2ABEB5BA005E692D /* libFastLogger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFastLogger.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1A8DF82ABEB63E005E692D /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		AB1A8DF92ABEB63E005E692D /* LoggerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerImpl.swift; sourceTree = "<group>"; };
+		AB1A8DFA2ABEB63E005E692D /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		AB1A8DFB2ABEB63E005E692D /* LogDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogDestination.swift; sourceTree = "<group>"; };
+		AB1A8DFC2ABEB63E005E692D /* LoggerLevels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerLevels.swift; sourceTree = "<group>"; };
+		AB1A8E022ABEB6F3005E692D /* FastSerialQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastSerialQueue.swift; sourceTree = "<group>"; };
+		AB1A8E042ABEB759005E692D /* FastLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastLock.swift; sourceTree = "<group>"; };
+		AB1A8E072ABEBBAE005E692D /* PackageLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageLogger.swift; sourceTree = "<group>"; };
+		AB1A8E0A2ABF422C005E692D /* LogFileDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFileDestination.swift; sourceTree = "<group>"; };
+		AB1A8E0C2ABF4267005E692D /* LogConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogConsoleDestination.swift; sourceTree = "<group>"; };
+		AB1A8E0E2ABF42FD005E692D /* LogDebugDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDebugDestination.swift; sourceTree = "<group>"; };
+		AB1A8E102ABF433E005E692D /* LogLevel+osLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogLevel+osLog.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB1A8DE72ABEB5BA005E692D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB1A8DE12ABEB5BA005E692D = {
+			isa = PBXGroup;
+			children = (
+				AB1A8DF72ABEB63E005E692D /* Sources */,
+				AB1A8DEB2ABEB5BA005E692D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB1A8DEB2ABEB5BA005E692D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB1A8DEA2ABEB5BA005E692D /* libFastLogger.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB1A8DF72ABEB63E005E692D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AB1A8E092ABEBE56005E692D /* destinations */,
+				AB1A8E062ABEB8FD005E692D /* multithread */,
+				AB1A8DF82ABEB63E005E692D /* Logger.swift */,
+				AB1A8DF92ABEB63E005E692D /* LoggerImpl.swift */,
+				AB1A8DFA2ABEB63E005E692D /* LogLevel.swift */,
+				AB1A8DFC2ABEB63E005E692D /* LoggerLevels.swift */,
+				AB1A8E072ABEBBAE005E692D /* PackageLogger.swift */,
+				AB1A8E102ABF433E005E692D /* LogLevel+osLog.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AB1A8E062ABEB8FD005E692D /* multithread */ = {
+			isa = PBXGroup;
+			children = (
+				AB1A8E042ABEB759005E692D /* FastLock.swift */,
+				AB1A8E022ABEB6F3005E692D /* FastSerialQueue.swift */,
+			);
+			path = multithread;
+			sourceTree = "<group>";
+		};
+		AB1A8E092ABEBE56005E692D /* destinations */ = {
+			isa = PBXGroup;
+			children = (
+				AB1A8DFB2ABEB63E005E692D /* LogDestination.swift */,
+				AB1A8E0A2ABF422C005E692D /* LogFileDestination.swift */,
+				AB1A8E0C2ABF4267005E692D /* LogConsoleDestination.swift */,
+				AB1A8E0E2ABF42FD005E692D /* LogDebugDestination.swift */,
+			);
+			path = destinations;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB1A8DE92ABEB5BA005E692D /* FastLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB1A8DF12ABEB5BA005E692D /* Build configuration list for PBXNativeTarget "FastLogger" */;
+			buildPhases = (
+				AB1A8DE62ABEB5BA005E692D /* Sources */,
+				AB1A8DE72ABEB5BA005E692D /* Frameworks */,
+				AB1A8DE82ABEB5BA005E692D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastLogger;
+			productName = FastLogger;
+			productReference = AB1A8DEA2ABEB5BA005E692D /* libFastLogger.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB1A8DE22ABEB5BA005E692D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AB1A8DE92ABEB5BA005E692D = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
+				};
+			};
+			buildConfigurationList = AB1A8DE52ABEB5BA005E692D /* Build configuration list for PBXProject "FastLogger" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB1A8DE12ABEB5BA005E692D;
+			productRefGroup = AB1A8DEB2ABEB5BA005E692D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB1A8DE92ABEB5BA005E692D /* FastLogger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB1A8DE62ABEB5BA005E692D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1A8DFE2ABEB63E005E692D /* LoggerImpl.swift in Sources */,
+				AB1A8E052ABEB759005E692D /* FastLock.swift in Sources */,
+				AB1A8DFF2ABEB63E005E692D /* LogLevel.swift in Sources */,
+				AB1A8E082ABEBBAE005E692D /* PackageLogger.swift in Sources */,
+				AB1A8DFD2ABEB63E005E692D /* Logger.swift in Sources */,
+				AB1A8E032ABEB6F3005E692D /* FastSerialQueue.swift in Sources */,
+				AB1A8E0B2ABF422C005E692D /* LogFileDestination.swift in Sources */,
+				AB1A8E0D2ABF4267005E692D /* LogConsoleDestination.swift in Sources */,
+				AB1A8E112ABF433E005E692D /* LogLevel+osLog.swift in Sources */,
+				AB1A8E002ABEB63E005E692D /* LogDestination.swift in Sources */,
+				AB1A8E012ABEB63E005E692D /* LoggerLevels.swift in Sources */,
+				AB1A8E0F2ABF42FD005E692D /* LogDebugDestination.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AB1A8DEF2ABEB5BA005E692D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB1A8DF02ABEB5BA005E692D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB1A8DF22ABEB5BA005E692D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB1A8DF32ABEB5BA005E692D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB1A8DE52ABEB5BA005E692D /* Build configuration list for PBXProject "FastLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1A8DEF2ABEB5BA005E692D /* Debug */,
+				AB1A8DF02ABEB5BA005E692D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB1A8DF12ABEB5BA005E692D /* Build configuration list for PBXNativeTarget "FastLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1A8DF22ABEB5BA005E692D /* Debug */,
+				AB1A8DF32ABEB5BA005E692D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB1A8DE22ABEB5BA005E692D /* Project object */;
+}
