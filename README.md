@@ -1,0 +1,2 @@
+# FastLogger
+Simple fast logger
