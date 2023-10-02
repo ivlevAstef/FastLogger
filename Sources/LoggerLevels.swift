@@ -6,7 +6,7 @@
 //  Copyright © 2023 Alexander Ivlev. All rights reserved.
 //
 
-protocol LoggerLevels {
+public protocol LoggerLevels {
     func other(_ level: LogLevel,
                _ msgClosure: @escaping @autoclosure () -> String,
                path: StaticString,

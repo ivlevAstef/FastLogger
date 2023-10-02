@@ -22,7 +22,7 @@ open class LogFileDestination: LogDestination {
     ///   - format: формат сообщений от логгера в каком виде они будут записываться в файл.
     ///   - limitOutputLevel: Максимальный уровень сообщений, который может быть записан.
     ///   - fileUrl: URL файла куда будут записываться сообщения.
-    init?(format: String, limitOutputLevel: LogLevel, fileUrl: URL) {
+    public init?(format: String, limitOutputLevel: LogLevel, fileUrl: URL) {
         self.format = format
         self.limitOutputLevel = limitOutputLevel
 

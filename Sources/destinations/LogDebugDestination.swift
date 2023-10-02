@@ -28,7 +28,7 @@ open class LogDebugDestination: LogDestination {
     /// :nodoc: see `LogDestination`
     open func process(_ msg: String, package: String, level: LogLevel) {
         // Актуально для xcode 15+ и iOS 17+
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, watchOS 7.0, *) {
             let log = os.Logger(subsystem: package, category: "")
             log.log(level: level.osLevel, "\(msg)")
         } else {
