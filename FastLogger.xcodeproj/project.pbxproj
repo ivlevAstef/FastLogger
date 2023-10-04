@@ -19,6 +19,8 @@
 		AB1A8E0D2ABF4267005E692D /* LogConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E0C2ABF4267005E692D /* LogConsoleDestination.swift */; };
 		AB1A8E0F2ABF42FD005E692D /* LogDebugDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E0E2ABF42FD005E692D /* LogDebugDestination.swift */; };
 		AB1A8E112ABF433E005E692D /* LogLevel+osLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A8E102ABF433E005E692D /* LogLevel+osLog.swift */; };
+		AB509D202ACDDB85000B93A0 /* LogFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB509D1F2ACDDB85000B93A0 /* LogFormat.swift */; };
+		AB509D222ACDDFB5000B93A0 /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB509D212ACDDFB5000B93A0 /* LogMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,8 @@
 		AB1A8E0C2ABF4267005E692D /* LogConsoleDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogConsoleDestination.swift; sourceTree = "<group>"; };
 		AB1A8E0E2ABF42FD005E692D /* LogDebugDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDebugDestination.swift; sourceTree = "<group>"; };
 		AB1A8E102ABF433E005E692D /* LogLevel+osLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogLevel+osLog.swift"; sourceTree = "<group>"; };
+		AB509D1F2ACDDB85000B93A0 /* LogFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFormat.swift; sourceTree = "<group>"; };
+		AB509D212ACDDFB5000B93A0 /* LogMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				AB1A8DFC2ABEB63E005E692D /* LoggerLevels.swift */,
 				AB1A8E072ABEBBAE005E692D /* PackageLogger.swift */,
 				AB1A8E102ABF433E005E692D /* LogLevel+osLog.swift */,
+				AB509D1F2ACDDB85000B93A0 /* LogFormat.swift */,
+				AB509D212ACDDFB5000B93A0 /* LogMessage.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -179,9 +185,11 @@
 				AB1A8E0B2ABF422C005E692D /* LogFileDestination.swift in Sources */,
 				AB1A8E0D2ABF4267005E692D /* LogConsoleDestination.swift in Sources */,
 				AB1A8E112ABF433E005E692D /* LogLevel+osLog.swift in Sources */,
+				AB509D202ACDDB85000B93A0 /* LogFormat.swift in Sources */,
 				AB1A8E002ABEB63E005E692D /* LogDestination.swift in Sources */,
 				AB1A8E012ABEB63E005E692D /* LoggerLevels.swift in Sources */,
 				AB1A8E0F2ABF42FD005E692D /* LogDebugDestination.swift in Sources */,
+				AB509D222ACDDFB5000B93A0 /* LogMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

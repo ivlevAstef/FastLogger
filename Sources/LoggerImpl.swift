@@ -49,23 +49,23 @@ final class LoggerImpl {
                path: StaticString = #file,
                line: UInt = #line,
                fun: StaticString = #function) {
-        let messageFormatter = MessageFormatter(level: level,
-                                                package: package,
-                                                path: path,
-                                                line: line,
-                                                fun: fun,
-                                                date: Date())
+        let date = Date()
         queue.async {
-            var msg: String?
+            var msg: LogMessage?
             for destination in self.destionationsLock.locked({ self.destinations }) {
                 if destination.limitOutputLevel.priority < level.priority {
                     continue
                 }
 
-                let message = msg ?? msgClosure()
+                let message = msg ?? LogMessage(level: level,
+                                                package: package,
+                                                path: path,
+                                                line: line,
+                                                method: fun,
+                                                date: date,
+                                                msg: msgClosure())
                 msg = message
-                let formattedMsg = messageFormatter.formatMessage(format: destination.format, msg: message)
-                destination.process(formattedMsg, package: package, level: level)
+                destination.process(message)
             }
         }
     }
@@ -73,121 +73,5 @@ final class LoggerImpl {
     func waitForFinish() {
         start() // На случай если мы вызвали эту функцию до полной инициализации лога.
         queue.wait()
-    }
-}
-
-/// Класс для форматирования сообщения согласно некоторому формату
-private class MessageFormatter {
-    private static let debugFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "mm:ss.SSS"
-        return formatter
-    }()
-    private static let nanoFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm:ss.SSS"
-        return formatter
-    }()
-    private static let anyFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS"
-        return formatter
-    }()
-    private static let fileFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd HH:mm:ss"
-        return formatter
-    }()
-
-    private let level: LogLevel
-    private let package: String
-    private let path: StaticString
-    private let line: UInt
-    private let fun: StaticString
-    private let date: Date
-
-    private lazy var file: String = {
-        return ("\(path)" as NSString).lastPathComponent
-    }()
-
-    internal init(level: LogLevel, package: String, path: StaticString, line: UInt, fun: StaticString, date: Date) {
-        self.level = level
-        self.package = package
-        self.path = path
-        self.line = line
-        self.fun = fun
-        self.date = date
-    }
-
-    internal func formatMessage(format: String, msg: String) -> String {
-        var result = format
-        // В принципе это можно серьезно ускорить, но зачем? - всеравно не в главном потоке
-        replaceIfNeed(in: &result, find: "%Dd", on: MessageFormatter.debugFormatter.string(from: self.date))
-        replaceIfNeed(in: &result, find: "%Dn", on: MessageFormatter.nanoFormatter.string(from: self.date))
-        replaceIfNeed(in: &result, find: "%Da", on: MessageFormatter.anyFormatter.string(from: self.date))
-        replaceIfNeed(in: &result, find: "%Df", on: MessageFormatter.fileFormatter.string(from: self.date))
-        replaceIfNeed(in: &result, find: "%s", on: "\(self.level.shortName)")
-        replaceIfNeed(in: &result, find: "%L", on: "\(self.level.name)")
-        replaceIfNeed(in: &result, find: "%e", on: "\(self.level.emoji)")
-        replaceIfNeed(in: &result, find: "%F", on: self.file)
-        replaceIfNeed(in: &result, find: "%l", on: "\(self.line)")
-        replaceIfNeed(in: &result, find: "%M", on: "\(self.fun)")
-        replaceIfNeed(in: &result, find: "%m", on: msg)
-        if package.isEmpty {
-            replaceIfNeed(in: &result, find: "%p", on: package)
-        }
-
-        return result
-    }
-
-    private func replaceIfNeed(in text: inout String, find: String, on substringClosure: @autoclosure () -> String) {
-        var substring: String?
-        while let range = text.range(of: find) {
-            let subtext = substring ?? substringClosure()
-            substring = subtext
-            text.replaceSubrange(range, with: subtext)
-        }
-    }
-
-}
-
-extension LogLevel {
-    internal var name: String {
-        switch self {
-        case .fatal: return "FATAL"
-        case .assert: return "ASSERT"
-        case .error: return "ERROR"
-        case .warning: return "WARNING"
-        case .info: return "INFO"
-        case .debug: return "DEBUG"
-        case .trace: return "TRACE"
-        case .none: return ""
-        }
-    }
-
-    internal var shortName: String {
-        switch self {
-        case .fatal: return "FTL"
-        case .assert: return "AST"
-        case .error: return "ERR"
-        case .warning: return "WRG"
-        case .info: return "INF"
-        case .debug: return "DBG"
-        case .trace: return "TRC"
-        case .none: return ""
-        }
-    }
-
-    internal var emoji: String {
-        switch self {
-        case .fatal: return "🛑"
-        case .assert: return "⁉️"
-        case .error: return "❗️"
-        case .warning: return "⚠️"
-        case .info: return "🔹"
-        case .debug: return "▶️"
-        case .trace: return "🗯"
-        case .none: return ""
-        }
     }
 }

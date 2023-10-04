@@ -10,8 +10,8 @@ import Foundation
 
 /// Позволяет записывать сообщения от логгера в файл, по указанному URL.
 open class LogFileDestination: LogDestination {
-    /// :nodoc: see `LogDestination`
-    public let format: String
+    /// Указанный формат логирования при инициализации.
+    public let format: LogFormat
     /// :nodoc: see `LogDestination`
     public let limitOutputLevel: LogLevel
 
@@ -19,10 +19,19 @@ open class LogFileDestination: LogDestination {
 
     /// Создает выход для логгера, направляющий все сообщений в файл.
     /// - Parameters:
+    ///   - format: формат, в текстовом представлении, сообщений от логгера в каком виде они будут записываться в файл.
+    ///   - limitOutputLevel: Максимальный уровень сообщений, который может быть записан.
+    ///   - fileUrl: URL файла куда будут записываться сообщения.
+    public convenience init?(format: String, limitOutputLevel: LogLevel, fileUrl: URL) {
+        self.init(format: LogFormat.format(by: format), limitOutputLevel: limitOutputLevel, fileUrl: fileUrl)
+    }
+
+    /// Создает выход для логгера, направляющий все сообщений в файл.
+    /// - Parameters:
     ///   - format: формат сообщений от логгера в каком виде они будут записываться в файл.
     ///   - limitOutputLevel: Максимальный уровень сообщений, который может быть записан.
     ///   - fileUrl: URL файла куда будут записываться сообщения.
-    public init?(format: String, limitOutputLevel: LogLevel, fileUrl: URL) {
+    public init?(format: LogFormat, limitOutputLevel: LogLevel, fileUrl: URL) {
         self.format = format
         self.limitOutputLevel = limitOutputLevel
 
@@ -46,8 +55,8 @@ open class LogFileDestination: LogDestination {
     }
 
     /// :nodoc: see `LogDestination`
-    open func process(_ msg: String, package: String, level: LogLevel) {
-        guard let data = "\(msg)\n".data(using: .utf8) else {
+    open func process(_ msg: LogMessage) {
+        guard let data = "\(msg.string(use: format))\n".data(using: .utf8) else {
             return
         }
 
