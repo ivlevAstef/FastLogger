@@ -9,7 +9,7 @@
 import Foundation
 
 /// Класс предназначенный для реализации основной логики работы логгера.
-final class LoggerImpl {
+final class LoggerImpl: @unchecked Sendable {
     static let global: LoggerImpl = LoggerImpl()
 
     private let destionationsLock: FastLock = makeFastLock()
@@ -18,7 +18,7 @@ final class LoggerImpl {
     // Добавление элементов в очередь быстрее на 2 порядка!
     // Исполнение очереди быстрее в 2-3 раза
     // среднее время на добавление элемента: 286 * 10^-9 = 0.000000286 секунды или по другому за секунду около 3500000 добавлений
-    private var queue = FastSerialQueue(label: "fastlogger.queue")
+    private let queue = FastSerialQueue(label: "fastlogger.queue")
 
     func start() {
         queue.start()
@@ -45,7 +45,7 @@ final class LoggerImpl {
     ///   - fun: название функции в файле - генерируется автоматически
     func other(_ level: LogLevel,
                _ package: String,
-               _ msgClosure: @escaping () -> String,
+               _ msgClosure: @escaping @Sendable () -> String,
                path: StaticString = #file,
                line: UInt = #line,
                fun: StaticString = #function) {

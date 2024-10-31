@@ -9,10 +9,10 @@
 import Foundation
 
 /// Описывает из чего может состоять форматирование сообщения для лога.
-public enum LogFormatItem {
+public enum LogFormatItem: Sendable {
     /// Варианты вывода даты+времени.
-    public enum DateFormat {
-        /// Форматирует согласно такой маске: `mm:ss.SSS`. 
+    public enum DateFormat: Sendable {
+        /// Форматирует согласно такой маске: `mm:ss.SSS`.
         /// Для текстового представления используется `%Dd`.
         case debug
         /// Форматирует согласно такой маске: `HH:mm:ss.SSS`. 
@@ -30,7 +30,7 @@ public enum LogFormatItem {
     }
 
     /// Варианты вывода уровня логирования.
-    public enum LevelFormat {
+    public enum LevelFormat: Sendable {
         /// Полный вариант названия уровня логирования заглавными буквами. "FATAL", "ASSERT", "ERROR", "WARNING", "INFO", "DEBUG", "TRACE".
         /// Для текстового представления используется `%L`
         case long

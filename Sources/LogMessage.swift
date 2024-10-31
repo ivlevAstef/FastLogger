@@ -9,7 +9,7 @@
 import Foundation
 
 /// Класс содержит полную информацию о сообщении, и позволяет её отформатировать по указанному формату.
-public final class LogMessage {
+public final class LogMessage: @unchecked Sendable {
     public let level: LogLevel
     public let package: String
     public let path: StaticString

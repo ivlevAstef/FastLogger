@@ -23,9 +23,9 @@ final class FastSerialQueue {
 
     private let executor: FastSerialQueueExecutor = FastSerialQueueExecutor()
     // в блоке не может быть unowned так как никто не знает, когда же тело потока запуститься
-    private lazy var thread = Thread(block: { [weak self] in
+    private lazy var thread = Thread(block: { [executor] in
         // Метод вызовется разово, при инициализации очереди.
-        self?.executor.run()
+        executor.run()
     })
 
     /// :nodoc:
@@ -59,7 +59,7 @@ final class FastSerialQueue {
     }
 }
 
-private final class FastSerialQueueExecutor {
+private final class FastSerialQueueExecutor: @unchecked Sendable {
     private final class Element {
         internal let process: () -> Void
         internal var next: Element? = nil

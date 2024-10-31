@@ -7,7 +7,7 @@
 //
 
 /// Уровни логирования.
-public enum LogLevel {
+public enum LogLevel: Sendable {
     /// Полностью отключает логирование,
     case none
 

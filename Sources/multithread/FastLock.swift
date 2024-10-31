@@ -6,7 +6,7 @@
 //  Copyright © 2018 Alexander Ivlev. All rights reserved.
 //
 
-internal protocol FastLock {
+internal protocol FastLock: Sendable {
     func lock()
     func unlock()
     func locked<Result>(_ closure: () -> Result) -> Result
@@ -24,7 +24,7 @@ internal func makeFastLock() -> FastLock {
 
 import Glibc
 
-private class SpinLock: FastLock {
+private class SpinLock: @unchecked Sendable, FastLock {
     private var monitor: pthread_spinlock_t = 0
 
     init() {
@@ -50,7 +50,7 @@ private class SpinLock: FastLock {
 
 import Darwin
 
-private class UnfairLock: FastLock {
+private class UnfairLock: @unchecked Sendable, FastLock {
     private let monitor: os_unfair_lock_t
 
     init() {

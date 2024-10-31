@@ -17,7 +17,7 @@ import Foundation
 /// ...
 /// ```
 /// Для большей информации о уровнях логирования смотри `LoggerLevels`
-public let log = Logger()
+nonisolated(unsafe) public let log = Logger()
 
 /// Класс предназначенный для логирования и настроек логгера.
 /// Использовать через переменную 'log'
@@ -87,7 +87,7 @@ public struct Logger {
     ///   - line: строчка кода в файле - генерируется автоматически
     ///   - fun: название функции в файле - генерируется автоматически
     public func other(_ level: LogLevel,
-                      _ msgClosure: @escaping @autoclosure () -> String,
+                      _ msgClosure: @escaping @autoclosure @Sendable () -> String,
                       path: StaticString = #file,
                       line: UInt = #line,
                       fun: StaticString = #function) {
