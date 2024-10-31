@@ -7,7 +7,7 @@
 //
 
 /// Логгер привязанный к пакету. Позволяет в сообщения логгера добавлять доп информацию о имени модуля/пакета.
-public struct PackageLogger {
+public struct PackageLogger: Sendable {
     /// Название модуля/пакета.
     public let name: String
 

@@ -17,7 +17,7 @@ import Foundation
 /// ...
 /// ```
 /// Для большей информации о уровнях логирования смотри `LoggerLevels`
-nonisolated(unsafe) public let log = Logger()
+public let log = Logger()
 
 /// Класс предназначенный для логирования и настроек логгера.
 /// Использовать через переменную 'log'
@@ -31,9 +31,9 @@ nonisolated(unsafe) public let log = Logger()
 /// /// Использование:
 /// log.module.info("your message")
 /// ```
-public struct Logger {
+public struct Logger: Sendable {
     /// Настройки, а также методы для контроля жизненного цикла логгера.
-    public struct Configuration {
+    public struct Configuration: Sendable {
         /// Запускает логгер. Вызывать этот метод единожды, после настройки всего что нужно.
         /// Без вывоза этого метода, все переданные сообщения в логгер будут накапливаться в нем, но не будут никуда записаны.
         /// Поэтому даже если вы начнете писать сообщения в логгер, до того как его запустите, сообщения не будут потеряны.
