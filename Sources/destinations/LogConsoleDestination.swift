@@ -37,7 +37,7 @@ open class LogConsoleDestination: LogDestination {
     open func process(_ msg: LogMessage) {
         let message = msg.string(use: format)
         // Актуально для xcode 15+ и iOS 17+
-        if #available(iOS 17.0, watchOS 7.0, macOS 11.0, *) {
+        if #available(iOS 17.0, watchOS 7.0, macOS 11.0, tvOS 14.0, *) {
             let log = os.Logger(subsystem: msg.package, category: "")
             log.log(level: msg.level.osLevel, "\(message)")
         } else {
